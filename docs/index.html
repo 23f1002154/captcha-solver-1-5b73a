@@ -1,0 +1,16 @@
+<!doctype html>
+<html><head><meta charset="utf-8"><title>Build a captcha solver</title></head>
+<body>
+<h1>Captcha demo</h1>
+<div id="url"></div>
+<img id="img" src="" alt="captcha sample" />
+<div id="solved">Not solved</div>
+<script>
+const params = new URLSearchParams(location.search);
+const url = params.get('url');
+const fallback = ``;
+document.getElementById('url').textContent = url || 'using sample';
+document.getElementById('img').src = url || fallback;
+setTimeout(()=> document.getElementById('solved').textContent='ABC123', 2000);
+</script>
+</body></html>
